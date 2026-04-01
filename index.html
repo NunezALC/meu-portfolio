@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dorgivaldo | Portfolio</title>
+    <link rel="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" href="style.css">
+    <style>
+        :root { --primary-color: #0d6efd; --bg-light: #f8f9fa;}
+        body { font-family: 'inter', sans-serif; color: #333: background-color: var(--bg-light);}
+        .hero { padding: 100px 0; background: #fff; }
+        .project-card { border: none; transition: transform 0.3s; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);}
+        .project-card:hover { transform: translateY(-10px); }
+        .btn-primary { border-radius: 8px; padding: 10px 25px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Dorgivaldo</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="#projetos">Projetos</a>
+                <a class="nav-link" href="#contato">Contato</a>
+            </div>
+        </div>
+    </nav>
+    <header class="hero texto-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Olá, eu sou o Dorgivaldo</h1>
+            <p class="lead text-muted">Desenvolvedor Front-End em formação & Entusiasta de UI/UX</p>
+            <a href="#projetos" class="btn btn-primary mt-3">Veja meus projetos</a>
+        </div>
+    </header>
+
+    <section id="projetos" class="container py-5">
+        <h2 class="text-center mb-5 fw-bold">Projetos em Destaques</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card project-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Player de Áudio e Vídeo</h5>
+                        <p class="card-text text-muted">Projeto focado em manipulação de mídia via JavaScript e acessibilidade </p>
+                        <span class="badge bg-secondary mb-3">HTML/CSS</span>
+                        <a href="#" class="d-block text-primary text-decoration-none fw-bold">Ver no GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato" class="bg-dark text-white py-5 mt-5">
+        <div class="container text-center">
+            <h3 class="mb-4">Vamos conversar?</h3>
+            <p>Atualmente buscando oportunidades como Desenvolvedor Junior ou Estágiario.</p>
+            <div class="mt-4">
+                <a href="#" class="text-white me-3">LinkedIn</a>
+                <a href="#" class="text-white">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
