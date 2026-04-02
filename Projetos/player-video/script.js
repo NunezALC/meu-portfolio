@@ -4,7 +4,7 @@ const barraProgresso = document.getElementById('barra-progresso');
 const tempoTexto = document.getElementById('tempo-atual');
 const btnMute = document.getElementById('btn-mute');
 
-btnPlay.addEventListener('click',() => {
+btnPlay.addEventListener('click', () => {
     if (video.paused) {
         video.play();
         btnPlay.innerText = 'Pause';
@@ -31,8 +31,8 @@ barraProgresso.addEventListener('input', () => {
 
 btnMute.addEventListener('click', () => {
     // A propriedade .muted é um booleano (true ou false)
-    video.muted = !video.muted; 
-    
+    video.muted = !video.muted;
+
     // Feedback visual para o usuário
     if (video.muted) {
         btnMute.innerText = "Desmutar";
