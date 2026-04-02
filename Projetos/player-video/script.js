@@ -14,7 +14,8 @@ btnPlay.addEventListener('click',() => {
 });
 
 video.addEventListener('timeupdate', () => {
-    const progresso = (video.currentTime / video.durantion) * 100;
+    console.log("O vídeo está em: " + video.currentTime);
+    const progresso = (video.currentTime / video.duration) * 100;
     barraProgresso.value = progresso;
 
     let min = Math.floor(video.currentTime / 60);
