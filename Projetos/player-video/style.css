@@ -22,3 +22,17 @@ video {
 #btn-play-pause:hover {
     transform: scale(1.05);
 }
+
+.form-range::-webkit-slider-thumb {
+    background: #0d6efd; /* Cor azul do Bootstrap */
+}
+
+.form-range::-moz-range-thumb {
+    background: #0d6efd;
+}
+
+/* Efeito de preenchimento da barra */
+#barra-progresso {
+    height: 8px;
+    cursor: pointer;
+}
