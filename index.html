@@ -6,8 +6,9 @@
     <title>Dorgivaldo | Portfólio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; }
+        body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; transition: background-color 0.3s ease, color 0.3s ease; }
         .hero { padding: 120px 0 80px; }
         .nav-link { font-weight: 500; color: #555 !important; }
         
@@ -33,7 +34,6 @@
             flex-grow: 1;
         }
 
-        /* Ajuste para a imagem do Aura */
         .project-card img {
             width: 100%;
             height: 200px;
@@ -53,6 +53,44 @@
             display: inline-block;
             margin-bottom: 10px;
         }
+
+        /* --- ESTILOS DARK MODE --- */
+        body.dark-mode {
+            background-color: #121212;
+            color: #f8f9fa;
+        }
+
+        .dark-mode .nav-link, .dark-mode .navbar-brand {
+            color: #f8f9fa !important;
+        }
+
+        .dark-mode .project-card {
+            background-color: #1e1e1e;
+            border-color: #333;
+        }
+
+        .dark-mode .project-card img {
+            border-color: #333;
+            opacity: 0.8;
+        }
+
+        .dark-mode .text-muted {
+            color: #adb5bd !important;
+        }
+
+        .dark-mode .border-top {
+            border-color: #333 !important;
+        }
+
+        .dark-mode .tags span {
+            background: #2c2f45;
+            color: #74a9ff;
+        }
+
+        .dark-mode .btn-outline-dark {
+            color: #f8f9fa;
+            border-color: #f8f9fa;
+        }
     </style>
 </head>
 <body>
@@ -60,9 +98,12 @@
     <nav class="navbar navbar-expand-lg py-3">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">DORGIVALDO</a>
-            <div class="navbar-nav ms-auto">
+            <div class="navbar-nav ms-auto d-flex align-items-center">
                 <a class="nav-link px-3" href="#projetos">Projetos</a>
                 <a class="nav-link px-3" href="#contato">Contato</a>
+                <button id="dark-mode-toggle" class="btn btn-sm ms-2" aria-label="Alternar modo escuro">
+                    <i id="theme-icon" class="bi bi-moon-fill"></i>
+                </button>
             </div>
         </div>
     </nav>
@@ -105,22 +146,22 @@
         <div class="row g-4">
             
             <div class="col-md-6">
-    <div class="project-card">
-        <img src="assets/img/screenshot-alura.png" alt="Interface Imersão Alura">
-        <div class="project-card-body">
-            <div class="tags">
-                <span>HTML5 / CSS3</span>
-                <span>Gemini AI</span> <span>UI Design</span>
+                <div class="project-card">
+                    <img src="assets/img/screenshot-alura.png" alt="Interface Imersão Alura">
+                    <div class="project-card-body">
+                        <div class="tags">
+                            <span>HTML5 / CSS3</span>
+                            <span>Gemini AI</span> <span>UI Design</span>
+                        </div>
+                        <h4 class="fw-bold">Imersão Front-End Alura</h4>
+                        <p class="text-muted">Interface estilo Spotify desenvolvida com auxílio do <strong>Gemini Code Assist</strong> no VS Code para otimização de algoritmos e boas práticas de CSS.</p>
+                        <div class="mt-4">
+                            <a href="https://nunezalc.github.io/Alura-imers-o-10/" target="_blank" class="btn btn-sm btn-primary">Ver Online</a>
+                            <a href="https://github.com/NunezALC/Alura-imers-o-10" target="_blank" class="text-decoration-none ms-3 fw-bold small">Repositório →</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h4 class="fw-bold">Imersão Front-End Alura</h4>
-            <p class="text-muted">Interface estilo Spotify desenvolvida com auxílio do <strong>Gemini Code Assist</strong> no VS Code para otimização de algoritmos e boas práticas de CSS.</p>
-            <div class="mt-4">
-                <a href="https://nunezalc.github.io/Alura-imers-o-10/" target="_blank" class="btn btn-sm btn-primary">Ver Online</a>
-                <a href="https://github.com/NunezALC/Alura-imers-o-10" target="_blank" class="text-decoration-none ms-3 fw-bold small">Repositório →</a>
-            </div>
-        </div>
-    </div>
-</div>
 
             <div class="col-md-6">
                 <div class="project-card">
@@ -146,12 +187,31 @@
 
     <footer id="contato" class="container py-5 border-top mt-5 text-center">
         <h3 class="fw-bold">Vamos conversar?</h3>
-        <p class="text-muted">Atualmente em João Pessoa, buscando oportunidades como Júnior ou Estagiário.</p>
+        <p class="text-muted">Atualmente buscando oportunidades como Júnior ou Estagiário.</p>
+
         <div class="mt-4">
             <a href="https://www.linkedin.com/in/dorgivaldoalcantara/" class="btn btn-outline-dark mx-2">LinkedIn</a>
             <a href="https://github.com/NunezALC" class="btn btn-outline-dark mx-2">GitHub</a>
         </div>
     </footer>
 
+    <script>
+        const themeBtn = document.getElementById('dark-mode-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+
+        themeBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            // Troca o ícone de Lua por Sol e vice-versa
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.classList.replace('bi-moon-fill', 'bi-sun-fill');
+            } else {
+                themeIcon.classList.replace('bi-sun-fill', 'bi-moon-fill');
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
