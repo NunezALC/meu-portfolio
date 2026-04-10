@@ -10,15 +10,49 @@
         body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; }
         .hero { padding: 120px 0 80px; }
         .nav-link { font-weight: 500; color: #555 !important; }
+        
+        /* Estilização dos Cards de Projeto */
         .project-card { 
             border: 1px solid #eee; 
-            padding: 30px; 
             border-radius: 15px; 
             background: white;
             transition: all 0.3s ease;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
-        .project-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.05); transform: translateY(-5px); }
-        .btn-primary { padding: 12px 30px; border-radius: 8px; font-weight: 600; }
+        
+        .project-card:hover { 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            transform: translateY(-5px); 
+        }
+
+        .project-card-body {
+            padding: 30px;
+            flex-grow: 1;
+        }
+
+        /* Ajuste para a imagem do Aura */
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+
+        .btn-primary { padding: 10px 25px; border-radius: 8px; font-weight: 600; }
+        
+        .tags span {
+            font-size: 0.75rem;
+            background: #f0f2ff;
+            color: #0d6efd;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-right: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -68,35 +102,42 @@
 
     <section id="projetos" class="container py-5">
         <h2 class="fw-bold mb-5">Projetos em Destaque</h2>
-        <div class="row">
+        <div class="row g-4">
+            
             <div class="col-md-6">
                 <div class="project-card">
-                    <span class="badge bg-light text-primary mb-2">JavaScript / Acessibilidade</span>
-                    <h4 class="fw-bold">Player de Áudio e Vídeo</h4>
-                    <p class="text-muted">Desenvolvimento de um player customizado com foco em manipulação de mídia e padrões WCAG.</p>
-
-                    <a href="./Projetos/player-video/index.html" class="btn btn-sm btn-primary">Ver Projeto Online</a>
-                    <a href="https://github.com/NunezALC/meu-portfolio/tree/main/projetos/player-video" target="_blank" class="text-decoration-none ms-3 fw-bold">Ver Código →</a>
+                    <div class="project-card-body">
+                        <span class="badge bg-light text-primary mb-2">JavaScript / Acessibilidade</span>
+                        <h4 class="fw-bold">Player de Áudio e Vídeo</h4>
+                        <p class="text-muted">Desenvolvimento de um player customizado com foco em manipulação de mídia e padrões WCAG.</p>
+                        <div class="mt-4">
+                            <a href="./Projetos/player-video/index.html" class="btn btn-sm btn-primary">Ver Online</a>
+                            <a href="https://github.com/NunezALC/meu-portfolio/tree/main/projetos/player-video" target="_blank" class="text-decoration-none ms-3 fw-bold small">Ver Código →</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <div class="col-md-6">
+                <div class="project-card">
+                    <img src="assets/img/screenshot-aura.png" alt="Pré-visualização da Dashboard Aura">
+                    <div class="project-card-body">
+                        <div class="tags">
+                            <span>JavaScript ES6</span>
+                            <span>Bootstrap 5</span>
+                            <span>Dark Mode</span>
+                        </div>
+                        <h4 class="fw-bold">Aura Dashboard</h4>
+                        <p class="text-muted">Dashboard dinâmica para gestão de estudos. Focada em manipulação de dados em tempo real.</p>
+                        <div class="mt-4">
+                            <a href="https://aura-dashboard-pi.vercel.app/" target="_blank" class="btn btn-sm btn-primary">Ver Online</a>
+                            <a href="https://github.com/NunezALC/aura-dashboard" target="_blank" class="text-decoration-none ms-3 fw-bold small">Repositório →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-        <div class="card-projeto">
-    <img src="assets/img/screenshot-aura.png" alt="Pré-visualização da Dashboard Aura em Modo Escuro">
-    <h3>Aura Dashboard</h3>
-    <p>Dashboard dinâmica para gestão de estudos. Focada em manipulação de dados em tempo real e experiência do usuário.</p>
-    
-    <div class="tags">
-        <span>JavaScript ES6</span>
-        <span>Bootstrap 5</span>
-        <span>Dark Mode</span>
-    </div>
-
-    <div class="links">
-        <a href="https://aura-dashboard-pi.vercel.app/" target="_blank" class="btn-link">Ver Site</a>
-        <a href="https://github.com/NunezALC/aura-dashboard" target="_blank" class="btn-github">Repositório</a>
-    </div>
-</div>
     </section>
 
     <footer id="contato" class="container py-5 border-top mt-5 text-center">
